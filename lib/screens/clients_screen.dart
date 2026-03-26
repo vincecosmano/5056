@@ -6,7 +6,7 @@ class ClientsScreen extends StatefulWidget {
   const ClientsScreen({Key? key}) : super(key: key);
 
   @override
-  _ClientsScreenState createState() => _ClientsScreenState();
+  State<ClientsScreen> createState() => _ClientsScreenState();
 }
 
 class _ClientsScreenState extends State<ClientsScreen> {
