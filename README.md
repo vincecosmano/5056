@@ -1,5 +1,39 @@
 # Oneapptredie Flutter App
 
+---
+
+## 🚀 COME OTTENERE L'APP PER TESTARLA – ISTRUZIONI IMMEDIATE
+
+> **Il build automatico è pronto ma richiede che TU lo avvii manualmente** (una volta sola).
+> GitHub blocca i workflow del bot finché il proprietario non li approva o li avvia direttamente.
+
+### ✅ OPZIONE 1 – Avvia il build manuale (più semplice, 2 clic)
+
+1. Vai su: **[https://github.com/vincecosmano/5056/actions/workflows/build.yml](https://github.com/vincecosmano/5056/actions/workflows/build.yml)**
+2. Clicca il pulsante grigio **"Run workflow"** a destra
+3. Nel menu a tendina scegli il branch: **`copilot/update-app-progress`**
+4. Clicca il pulsante verde **"Run workflow"**
+5. Aspetta ~5-10 minuti che finisca (vedrai le 4 fasi diventare verdi ✅)
+6. Risultato:
+   - 📱 **APK Android** → [https://github.com/vincecosmano/5056/releases/latest](https://github.com/vincecosmano/5056/releases/latest) (scarica `app-release.apk`)
+   - 🌐 **Web** → [https://vincecosmano.github.io/5056/](https://vincecosmano.github.io/5056/) (apri nel browser)
+
+### ✅ OPZIONE 2 – Approva i workflow già in coda
+
+1. Vai su: **[https://github.com/vincecosmano/5056/actions](https://github.com/vincecosmano/5056/actions)**
+2. Vedrai workflow con stato **"Waiting"** o **"Action required"**
+3. Clicca su uno di questi → clicca **"Approve and run"**
+4. Stessa destinazione finale: APK su Releases, Web su GitHub Pages
+
+### ✅ OPZIONE 3 – Cambia le impostazioni per approvazione automatica
+
+1. Vai su: **[https://github.com/vincecosmano/5056/settings/actions](https://github.com/vincecosmano/5056/settings/actions)**
+2. Nella sezione "Fork pull request workflows from outside collaborators"
+3. Seleziona **"Automatically approve and run workflows"**
+4. Salva → i futuri push del bot partiranno da soli
+
+---
+
 ## 📊 Stato di avanzamento (Progress Summary)
 
 ### Moduli implementati ✅
@@ -29,20 +63,7 @@
 
 ---
 
-## 📲 Testare l'app adesso (senza installare Flutter)
-
-| Piattaforma | Come fare |
-|-------------|-----------|
-| 🌐 **Web** | Apri [GitHub Pages](https://vincecosmano.github.io/5056/) nel browser |
-| 📱 **Android APK** | Scarica l'ultimo APK da [GitHub Releases](https://github.com/vincecosmano/5056/releases/latest), abilita "Origini sconosciute" e installalo |
-
-> Il workflow CI/CD produce automaticamente un nuovo APK e aggiorna GitHub Pages ad ogni push su `main` o su branch `copilot/**`.
-> Puoi anche avviare una build manuale da **Actions → Build – Web & Android APK → Run workflow**.
-
----
-
-
-1. Clone the repository:
+## Setup Instructions (sviluppo locale)
    ```bash
    git clone https://github.com/vincecosmano/5056.git
    cd 5056
