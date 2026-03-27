@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'services/app_theme.dart';
@@ -23,11 +24,17 @@ import 'screens/invoices_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  try {
-    await Firebase.initializeApp();
-  } catch (e) {
-    print('Firebase initialization error: $e');
+
+  // Initialize Firebase only on mobile platforms; skip on web for now
+  if (!kIsWeb) {
+    try {
+      await Firebase.initializeApp();
+    } catch (e) {
+      // Firebase init is optional – app works without it
+      debugPrint('Firebase initialization error: $e');
+    }
   }
+
   runApp(const MyApp());
 }
 
