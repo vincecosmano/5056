@@ -41,7 +41,10 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     needs: build-web
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: >
+      (github.event_name == 'push' &&
+       (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/copilot/')))
+      || github.event_name == 'workflow_dispatch'
     permissions:
       contents: write
 
@@ -100,7 +103,10 @@ jobs:
     name: Create GitHub Release with APK
     runs-on: ubuntu-latest
     needs: build-apk
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: >
+      (github.event_name == 'push' &&
+       (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/copilot/')))
+      || github.event_name == 'workflow_dispatch'
     permissions:
       contents: write
 
@@ -118,12 +124,12 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
-          name: Build ${{ github.run_number }}
+          name: Build ${{ github.run_number }} (${{ github.ref_name }})
           body: |
-            Automatic build from commit ${{ github.sha }}
+            Automatic build from branch `${{ github.ref_name }}` – commit ${{ github.sha }}
 
             ## Download
             - 📱 **Android APK**: Download `app-release.apk` from the assets below
-            - 🌐 **Web**: Available on GitHub Pages
+            - 🌐 **Web**: Available on GitHub Pages → https://${{ github.repository_owner }}.github.io/5056/
           files: apk/app-release.apk
           token: ${{ secrets.GITHUB_TOKEN }}

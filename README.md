@@ -29,7 +29,19 @@
 
 ---
 
-## Setup Instructions
+## 📲 Testare l'app adesso (senza installare Flutter)
+
+| Piattaforma | Come fare |
+|-------------|-----------|
+| 🌐 **Web** | Apri [GitHub Pages](https://vincecosmano.github.io/5056/) nel browser |
+| 📱 **Android APK** | Scarica l'ultimo APK da [GitHub Releases](https://github.com/vincecosmano/5056/releases/latest), abilita "Origini sconosciute" e installalo |
+
+> Il workflow CI/CD produce automaticamente un nuovo APK e aggiorna GitHub Pages ad ogni push su `main` o su branch `copilot/**`.
+> Puoi anche avviare una build manuale da **Actions → Build – Web & Android APK → Run workflow**.
+
+---
+
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/vincecosmano/5056.git
