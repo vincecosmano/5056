@@ -75,6 +75,7 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    // Firebase BOM 32.7.0 is compatible with firebase_core 2.24.x / firebase_auth 4.16.x
     implementation platform('com.google.firebase:firebase-bom:32.7.0')
     implementation 'androidx.multidex:multidex:2.0.1'
 }
