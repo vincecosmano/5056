@@ -61,13 +61,13 @@ flutter run -d emulator-5554
 
 ### Note
 - [x] Creare una nota
-- [ ] Modificare una nota
+- [x] Modificare una nota
 - [x] Eliminare una nota
 
 ### Progetti
 - [x] Creare un progetto
 - [x] Visualizzare i progetti
-- [ ] Modificare stato progetto
+- [x] Modificare stato progetto
 
 ### Preventivi (Quotes)
 - [x] Creare un preventivo

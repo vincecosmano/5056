@@ -65,9 +65,21 @@ class _NotesScreenState extends State<NotesScreen> {
                     final note = noteProvider.notes[index];
                     return ListTile(
                       title: Text(note.content),
-                      trailing: IconButton(
-                        icon: const Icon(Icons.delete),
-                        onPressed: () => noteProvider.delete(note.id),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.edit_outlined),
+                            tooltip: 'Edit',
+                            onPressed: () =>
+                                _showEditDialog(context, noteProvider, note),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.delete_outline),
+                            tooltip: 'Delete',
+                            onPressed: () => noteProvider.delete(note.id),
+                          ),
+                        ],
                       ),
                     );
                   },
@@ -78,6 +90,39 @@ class _NotesScreenState extends State<NotesScreen> {
         ],
       ),
     );
+  }
+
+  void _showEditDialog(
+      BuildContext context, NoteProvider noteProvider, Note note) {
+    final editController = TextEditingController(text: note.content);
+    showDialog<void>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text('Edit note'),
+        content: TextField(
+          controller: editController,
+          autofocus: true,
+          maxLines: null,
+          decoration: const InputDecoration(border: OutlineInputBorder()),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              final text = editController.text.trim();
+              if (text.isNotEmpty) {
+                noteProvider.update(note.id, text);
+              }
+              Navigator.pop(dialogContext);
+            },
+            child: const Text('Save'),
+          ),
+        ],
+      ),
+    ).then((_) => editController.dispose());
   }
 
   @override

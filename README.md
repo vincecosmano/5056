@@ -5,7 +5,7 @@
 ### Moduli implementati ✅
 | Modulo | Descrizione | Stato |
 |--------|-------------|-------|
-| **Note** | Creazione e cancellazione di note | ✅ Completo |
+| **Note** | Creazione, modifica e cancellazione di note | ✅ Completo |
 | **Progetti** | Gestione progetti con stato | ✅ Completo |
 | **Clienti** | Rubrica clienti (add/remove) | ✅ Completo |
 | **Fatture** | Creazione fatture con scadenza e importo | ✅ Completo |
