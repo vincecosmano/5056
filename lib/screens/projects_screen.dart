@@ -13,6 +13,13 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
   final _nameController = TextEditingController();
   final _descController = TextEditingController();
 
+  static const _statuses = ['Active', 'On Hold', 'Completed'];
+
+  String _nextStatus(String current) {
+    final idx = _statuses.indexOf(current);
+    return _statuses[(idx < 0 ? 0 : idx + 1) % _statuses.length];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +87,20 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Chip(label: Text(project.status)),
+                          ActionChip(
+                            label: Text(project.status),
+                            tooltip: 'Change status',
+                            onPressed: () {
+                              projectProvider.update(Project(
+                                id: project.id,
+                                name: project.name,
+                                description: project.description,
+                                startDate: project.startDate,
+                                endDate: project.endDate,
+                                status: _nextStatus(project.status),
+                              ));
+                            },
+                          ),
                           IconButton(
                             icon: const Icon(Icons.delete),
                             onPressed: () =>

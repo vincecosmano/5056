@@ -1,7 +1,89 @@
 # Oneapptredie Flutter App
 
-## Setup Instructions
-1. Clone the repository:
+---
+
+## 🚀 COME OTTENERE L'APP – ISTRUZIONI PASSO DOPO PASSO
+
+---
+
+### 📖 Cos'è una "PR"?
+
+Una **PR (Pull Request)** è una proposta di modifica al codice che il bot Copilot ha preparato per te.
+È come un "pacchetto di modifiche" che aspetta la tua approvazione prima di essere salvato definitivamente nel tuo progetto.
+**Finché non la approvi (merge), le modifiche non sono attive.**
+
+In questo caso la PR contiene la correzione che fa partire i build automaticamente.
+
+---
+
+### PASSO 1 — Apri e accetta la PR (una volta sola)
+
+👉 **Clicca direttamente qui:** **[https://github.com/vincecosmano/5056/pull/4](https://github.com/vincecosmano/5056/pull/4)**
+
+Poi segui questi passi nella pagina che si apre:
+
+1. Scorri la pagina fino **in fondo** (ignora tutto il testo tecnico sopra)
+2. Vedrai un **riquadro verde** con scritto **"Merge pull request"**
+3. Clicca il pulsante verde **"Merge pull request"**
+4. Appare un secondo pulsante verde **"Confirm merge"** → cliccalo
+5. ✅ **Fatto!** La pagina diventa viola con scritto "Pull request successfully merged and closed"
+
+> ⚠️ **Se il pulsante è grigio invece che verde** e dice "This branch has conflicts": scrivi un nuovo messaggio a Copilot chiedendo di risolvere i conflitti.
+
+---
+
+### PASSO 2 — Avvia il primo build manuale (dopo il merge)
+
+1. Apri: **[https://github.com/vincecosmano/5056/actions/workflows/build.yml](https://github.com/vincecosmano/5056/actions/workflows/build.yml)**
+2. Vedrai un pulsante grigio **"Run workflow"** in alto a destra
+3. Cliccalo → appare un piccolo menù → clicca il pulsante verde **"Run workflow"**
+4. ⏳ Aspetta circa 10 minuti (vedrai girare dei cerchi colorati)
+
+### Dove trovi l'app dopo il build
+
+| Piattaforma | Link diretto |
+|-------------|-------------|
+| 📱 **Android APK** | **[Clicca qui → Releases](https://github.com/vincecosmano/5056/releases/latest)** → poi clicca `app-release.apk` per scaricarla sul telefono |
+| 🌐 **App Web** | **[vincecosmano.github.io/5056/](https://vincecosmano.github.io/5056/)** → apri nel browser |
+
+---
+
+### ℹ️ Dopo il merge: tutto automatico
+
+Da quando hai fatto il merge del PASSO 1, **ogni volta che Copilot finisce di lavorare**, il build parte da solo senza che tu faccia nulla. Trovi sempre l'ultima versione ai link sopra.
+
+---
+
+## 📊 Stato di avanzamento (Progress Summary)
+
+### Moduli implementati ✅
+| Modulo | Descrizione | Stato |
+|--------|-------------|-------|
+| **Note** | Creazione, modifica e cancellazione di note | ✅ Completo |
+| **Progetti** | Gestione progetti con stato | ✅ Completo |
+| **Clienti** | Rubrica clienti (add/remove) | ✅ Completo |
+| **Fatture** | Creazione fatture con scadenza e importo | ✅ Completo |
+| **Ore lavoro** | Registrazione ore lavorate per progetto | ✅ Completo |
+| **Calendario** | Agenda eventi con date | ✅ Completo |
+| **Preventivi** | Creazione preventivi per cliente | ✅ Completo |
+| **Chilometri** | Tracciamento percorsi e costo rimborso | ✅ Completo |
+| **Login Google** | Autenticazione via Google OAuth | ✅ Completo |
+| **Home Dashboard** | Griglia con icone e descrizioni per ogni modulo | ✅ Completo |
+
+### Da completare 🔲
+- [ ] Persistenza dati su Firebase (attualmente solo in memoria)
+- [ ] Firebase Web (Google Sign-In su browser)
+- [ ] Schermata profilo utente
+- [ ] Export PDF per fatture e preventivi
+- [ ] Notifiche push (scadenze fatture, eventi calendario)
+
+### CI/CD ✅
+- Build web automatico → GitHub Pages (build funzionante; Google Sign-In su web richiede configurazione Firebase aggiuntiva)
+- Build APK release → GitHub Releases
+
+---
+
+## Setup Instructions (sviluppo locale)
    ```bash
    git clone https://github.com/vincecosmano/5056.git
    cd 5056
