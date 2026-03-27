@@ -2,31 +2,55 @@
 
 ---
 
-## 🚀 COME OTTENERE L'APP PER TESTARLA – ISTRUZIONI IMMEDIATE
+## 🚀 COME OTTENERE L'APP – ISTRUZIONI PASSO DOPO PASSO
 
-> ✅ **Soluzione definitiva:** Fai il merge di questa PR su `main` → da quel momento il build parte **da solo, automaticamente**, ogni volta che il bot completa il suo lavoro. Non devi più fare nulla.
+---
 
-### PASSO 1 — Fai il merge della PR (una volta sola, poi non serve più)
+### 📖 Cos'è una "PR"?
 
-1. Apri: **[https://github.com/vincecosmano/5056/pulls](https://github.com/vincecosmano/5056/pulls)**
-2. Clicca sulla PR aperta
-3. Scorri in fondo → clicca il pulsante verde **"Merge pull request"** → **"Confirm merge"**
-4. ✅ Fatto! Da questo momento ogni sessione di Copilot avvia il build automaticamente
+Una **PR (Pull Request)** è una proposta di modifica al codice che il bot Copilot ha preparato per te.
+È come un "pacchetto di modifiche" che aspetta la tua approvazione prima di essere salvato definitivamente nel tuo progetto.
+**Finché non la approvi (merge), le modifiche non sono attive.**
 
-### PASSO 2 — Avvia il primo build adesso (dopo il merge)
+In questo caso la PR contiene la correzione che fa partire i build automaticamente.
 
-1. Apri: **[https://github.com/vincecosmano/5056/actions](https://github.com/vincecosmano/5056/actions)**
-2. Nella colonna sinistra clicca su **"Build – Web & Android APK"**
-3. Clicca il pulsante grigio **"Run workflow"** a destra
-4. Clicca il pulsante verde **"Run workflow"**
-5. Aspetta ~10 minuti
+---
+
+### PASSO 1 — Apri e accetta la PR (una volta sola)
+
+👉 **Clicca direttamente qui:** **[https://github.com/vincecosmano/5056/pull/4](https://github.com/vincecosmano/5056/pull/4)**
+
+Poi segui questi passi nella pagina che si apre:
+
+1. Scorri la pagina fino **in fondo** (ignora tutto il testo tecnico sopra)
+2. Vedrai un **riquadro verde** con scritto **"Merge pull request"**
+3. Clicca il pulsante verde **"Merge pull request"**
+4. Appare un secondo pulsante verde **"Confirm merge"** → cliccalo
+5. ✅ **Fatto!** La pagina diventa viola con scritto "Pull request successfully merged and closed"
+
+> ⚠️ **Se il pulsante è grigio invece che verde** e dice "This branch has conflicts": scrivi un nuovo messaggio a Copilot chiedendo di risolvere i conflitti.
+
+---
+
+### PASSO 2 — Avvia il primo build manuale (dopo il merge)
+
+1. Apri: **[https://github.com/vincecosmano/5056/actions/workflows/build.yml](https://github.com/vincecosmano/5056/actions/workflows/build.yml)**
+2. Vedrai un pulsante grigio **"Run workflow"** in alto a destra
+3. Cliccalo → appare un piccolo menù → clicca il pulsante verde **"Run workflow"**
+4. ⏳ Aspetta circa 10 minuti (vedrai girare dei cerchi colorati)
 
 ### Dove trovi l'app dopo il build
 
 | Piattaforma | Link diretto |
 |-------------|-------------|
-| 📱 **Android APK** | [github.com/vincecosmano/5056/releases/latest](https://github.com/vincecosmano/5056/releases/latest) → scarica `app-release.apk` |
-| 🌐 **App Web** | [vincecosmano.github.io/5056/](https://vincecosmano.github.io/5056/) |
+| 📱 **Android APK** | **[Clicca qui → Releases](https://github.com/vincecosmano/5056/releases/latest)** → poi clicca `app-release.apk` per scaricarla sul telefono |
+| 🌐 **App Web** | **[vincecosmano.github.io/5056/](https://vincecosmano.github.io/5056/)** → apri nel browser |
+
+---
+
+### ℹ️ Dopo il merge: tutto automatico
+
+Da quando hai fatto il merge del PASSO 1, **ogni volta che Copilot finisce di lavorare**, il build parte da solo senza che tu faccia nulla. Trovi sempre l'ultima versione ai link sopra.
 
 ---
 
