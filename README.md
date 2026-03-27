@@ -4,22 +4,29 @@
 
 ## 🚀 COME OTTENERE L'APP PER TESTARLA – ISTRUZIONI IMMEDIATE
 
-> ✅ **Da questo commit il build parte automaticamente ad ogni push del bot** – non serve più nessuna approvazione manuale.
+> ✅ **Soluzione definitiva:** Fai il merge di questa PR su `main` → da quel momento il build parte **da solo, automaticamente**, ogni volta che il bot completa il suo lavoro. Non devi più fare nulla.
 
-### Dove trovi l'app dopo il build (~10 minuti)
+### PASSO 1 — Fai il merge della PR (una volta sola, poi non serve più)
+
+1. Apri: **[https://github.com/vincecosmano/5056/pulls](https://github.com/vincecosmano/5056/pulls)**
+2. Clicca sulla PR aperta
+3. Scorri in fondo → clicca il pulsante verde **"Merge pull request"** → **"Confirm merge"**
+4. ✅ Fatto! Da questo momento ogni sessione di Copilot avvia il build automaticamente
+
+### PASSO 2 — Avvia il primo build adesso (dopo il merge)
+
+1. Apri: **[https://github.com/vincecosmano/5056/actions](https://github.com/vincecosmano/5056/actions)**
+2. Nella colonna sinistra clicca su **"Build – Web & Android APK"**
+3. Clicca il pulsante grigio **"Run workflow"** a destra
+4. Clicca il pulsante verde **"Run workflow"**
+5. Aspetta ~10 minuti
+
+### Dove trovi l'app dopo il build
 
 | Piattaforma | Link diretto |
 |-------------|-------------|
 | 📱 **Android APK** | [github.com/vincecosmano/5056/releases/latest](https://github.com/vincecosmano/5056/releases/latest) → scarica `app-release.apk` |
 | 🌐 **App Web** | [vincecosmano.github.io/5056/](https://vincecosmano.github.io/5056/) |
-
-### Se vuoi avviare un build subito (senza aspettare il prossimo push)
-
-1. Apri: **[https://github.com/vincecosmano/5056/actions](https://github.com/vincecosmano/5056/actions)**
-2. Clicca sul workflow **"Build – Web & Android APK"** nella colonna di sinistra
-3. Clicca il pulsante grigio **"Run workflow"** a destra della pagina
-4. Lascia il branch di default e clicca **"Run workflow"** (verde)
-5. Aspetta ~10 minuti → trovi APK e web ai link sopra
 
 ---
 
