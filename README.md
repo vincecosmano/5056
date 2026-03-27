@@ -59,7 +59,7 @@ Da quando hai fatto il merge del PASSO 1, **ogni volta che Copilot finisce di la
 ### Moduli implementati ✅
 | Modulo | Descrizione | Stato |
 |--------|-------------|-------|
-| **Note** | Creazione, modifica e cancellazione di note | ✅ Completo |
+| **Note** | Creazione, modifica e cancellazione di note (con titolo) | ✅ Completo |
 | **Progetti** | Gestione progetti con stato | ✅ Completo |
 | **Clienti** | Rubrica clienti (add/remove) | ✅ Completo |
 | **Fatture** | Creazione fatture con scadenza e importo | ✅ Completo |
@@ -69,9 +69,9 @@ Da quando hai fatto il merge del PASSO 1, **ogni volta che Copilot finisce di la
 | **Chilometri** | Tracciamento percorsi e costo rimborso | ✅ Completo |
 | **Login Google** | Autenticazione via Google OAuth | ✅ Completo |
 | **Home Dashboard** | Griglia con icone e descrizioni per ogni modulo | ✅ Completo |
+| **Persistenza dati** | I dati vengono salvati localmente e sopravvivono al riavvio | ✅ Completo |
 
 ### Da completare 🔲
-- [ ] Persistenza dati su Firebase (attualmente solo in memoria)
 - [ ] Firebase Web (Google Sign-In su browser)
 - [ ] Schermata profilo utente
 - [ ] Export PDF per fatture e preventivi

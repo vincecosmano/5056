@@ -10,7 +10,8 @@ class NotesScreen extends StatefulWidget {
 }
 
 class _NotesScreenState extends State<NotesScreen> {
-  final _controller = TextEditingController();
+  final _titleController = TextEditingController();
+  final _contentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,33 +23,47 @@ class _NotesScreenState extends State<NotesScreen> {
         children: [
           Padding(
             padding: const EdgeInsets.all(16),
-            child: Row(
+            child: Column(
               children: [
-                Expanded(
-                  child: TextField(
-                    controller: _controller,
-                    decoration: const InputDecoration(
-                      labelText: 'New note',
-                      border: OutlineInputBorder(),
-                    ),
+                TextField(
+                  controller: _titleController,
+                  decoration: const InputDecoration(
+                    labelText: 'Title',
+                    border: OutlineInputBorder(),
                   ),
                 ),
-                const SizedBox(width: 8),
-                ElevatedButton(
-                  onPressed: () {
-                    if (_controller.text.isNotEmpty) {
-                      context.read<NoteProvider>().add(
-                            Note(
-                              id: DateTime.now()
-                                  .millisecondsSinceEpoch
-                                  .toString(),
-                              content: _controller.text,
-                            ),
-                          );
-                      _controller.clear();
-                    }
-                  },
-                  child: const Text('Add'),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: _contentController,
+                        decoration: const InputDecoration(
+                          labelText: 'Note',
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: () {
+                        if (_contentController.text.isNotEmpty) {
+                          context.read<NoteProvider>().add(
+                                Note(
+                                  id: DateTime.now()
+                                      .millisecondsSinceEpoch
+                                      .toString(),
+                                  title: _titleController.text.trim(),
+                                  content: _contentController.text,
+                                ),
+                              );
+                          _titleController.clear();
+                          _contentController.clear();
+                        }
+                      },
+                      child: const Text('Add'),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -64,7 +79,17 @@ class _NotesScreenState extends State<NotesScreen> {
                   itemBuilder: (context, index) {
                     final note = noteProvider.notes[index];
                     return ListTile(
-                      title: Text(note.content),
+                      title: Text(
+                        note.title.isNotEmpty ? note.title : note.content,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: note.title.isNotEmpty
+                          ? Text(
+                              note.content,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            )
+                          : null,
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -94,16 +119,33 @@ class _NotesScreenState extends State<NotesScreen> {
 
   void _showEditDialog(
       BuildContext context, NoteProvider noteProvider, Note note) {
-    final editController = TextEditingController(text: note.content);
+    final titleEditController = TextEditingController(text: note.title);
+    final contentEditController = TextEditingController(text: note.content);
     showDialog<void>(
       context: context,
       builder: (dialogContext) => AlertDialog(
         title: const Text('Edit note'),
-        content: TextField(
-          controller: editController,
-          autofocus: true,
-          maxLines: null,
-          decoration: const InputDecoration(border: OutlineInputBorder()),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              controller: titleEditController,
+              decoration: const InputDecoration(
+                labelText: 'Title',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 8),
+            TextField(
+              controller: contentEditController,
+              autofocus: true,
+              maxLines: 4,
+              decoration: const InputDecoration(
+                labelText: 'Note',
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ],
         ),
         actions: [
           TextButton(
@@ -112,9 +154,13 @@ class _NotesScreenState extends State<NotesScreen> {
           ),
           ElevatedButton(
             onPressed: () {
-              final text = editController.text.trim();
-              if (text.isNotEmpty) {
-                noteProvider.update(note.id, text);
+              final content = contentEditController.text.trim();
+              if (content.isNotEmpty) {
+                noteProvider.updateNote(
+                  note.id,
+                  title: titleEditController.text.trim(),
+                  content: content,
+                );
               }
               Navigator.pop(dialogContext);
             },
@@ -122,12 +168,16 @@ class _NotesScreenState extends State<NotesScreen> {
           ),
         ],
       ),
-    ).then((_) => editController.dispose());
+    ).then((_) {
+      titleEditController.dispose();
+      contentEditController.dispose();
+    });
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _titleController.dispose();
+    _contentController.dispose();
     super.dispose();
   }
 }

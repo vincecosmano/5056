@@ -1,9 +1,42 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CalendarProvider with ChangeNotifier {
+  static const _key = 'calendar_events';
   List<Map<String, dynamic>> _events = [];
 
   List<Map<String, dynamic>> get events => _events;
+
+  CalendarProvider() {
+    _load();
+  }
+
+  Future<void> _load() async {
+    final prefs = await SharedPreferences.getInstance();
+    final raw = prefs.getString(_key);
+    if (raw != null) {
+      final list = jsonDecode(raw) as List<dynamic>;
+      _events = list.map((e) {
+        final m = Map<String, dynamic>.from(e as Map);
+        m['date'] = DateTime.parse(m['date'] as String);
+        return m;
+      }).toList();
+      notifyListeners();
+    }
+  }
+
+  Future<void> _save() async {
+    final prefs = await SharedPreferences.getInstance();
+    final serializable = _events.map((ev) {
+      final copy = Map<String, dynamic>.from(ev);
+      if (copy['date'] is DateTime) {
+        copy['date'] = (copy['date'] as DateTime).toIso8601String();
+      }
+      return copy;
+    }).toList();
+    await prefs.setString(_key, jsonEncode(serializable));
+  }
 
   void addEvent(String title, String description, DateTime date, String eventType) {
     _events.add({
@@ -13,6 +46,7 @@ class CalendarProvider with ChangeNotifier {
       'date': date,
       'eventType': eventType,
     });
+    _save();
     notifyListeners();
   }
 
@@ -26,12 +60,14 @@ class CalendarProvider with ChangeNotifier {
         'date': date,
         'eventType': eventType,
       };
+      _save();
       notifyListeners();
     }
   }
 
   void deleteEvent(String id) {
     _events.removeWhere((event) => event['id'] == id);
+    _save();
     notifyListeners();
   }
 
