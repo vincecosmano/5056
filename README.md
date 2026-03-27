@@ -1,5 +1,34 @@
 # Oneapptredie Flutter App
 
+## 📊 Stato di avanzamento (Progress Summary)
+
+### Moduli implementati ✅
+| Modulo | Descrizione | Stato |
+|--------|-------------|-------|
+| **Note** | Creazione e cancellazione di note | ✅ Completo |
+| **Progetti** | Gestione progetti con stato | ✅ Completo |
+| **Clienti** | Rubrica clienti (add/remove) | ✅ Completo |
+| **Fatture** | Creazione fatture con scadenza e importo | ✅ Completo |
+| **Ore lavoro** | Registrazione ore lavorate per progetto | ✅ Completo |
+| **Calendario** | Agenda eventi con date | ✅ Completo |
+| **Preventivi** | Creazione preventivi per cliente | ✅ Completo |
+| **Chilometri** | Tracciamento percorsi e costo rimborso | ✅ Completo |
+| **Login Google** | Autenticazione via Google OAuth | ✅ Completo |
+| **Home Dashboard** | Griglia con icone e descrizioni per ogni modulo | ✅ Completo |
+
+### Da completare 🔲
+- [ ] Persistenza dati su Firebase (attualmente solo in memoria)
+- [ ] Firebase Web (Google Sign-In su browser)
+- [ ] Schermata profilo utente
+- [ ] Export PDF per fatture e preventivi
+- [ ] Notifiche push (scadenze fatture, eventi calendario)
+
+### CI/CD ✅
+- Build web automatico → GitHub Pages (build funzionante; Google Sign-In su web richiede configurazione Firebase aggiuntiva)
+- Build APK release → GitHub Releases
+
+---
+
 ## Setup Instructions
 1. Clone the repository:
    ```bash

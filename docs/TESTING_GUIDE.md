@@ -55,44 +55,44 @@ flutter run -d emulator-5554
 ## ✅ Checklist di Testing
 
 ### Navigazione
-- [ ] Home Screen si apre correttamente
-- [ ] Tutti i bottoni di navigazione funzionano
-- [ ] Nessun crash durante la navigazione
+- [x] Home Screen si apre correttamente
+- [x] Tutti i bottoni di navigazione funzionano
+- [x] Nessun crash durante la navigazione
 
 ### Note
-- [ ] Creare una nota
+- [x] Creare una nota
 - [ ] Modificare una nota
-- [ ] Eliminare una nota
+- [x] Eliminare una nota
 
 ### Progetti
-- [ ] Creare un progetto
-- [ ] Visualizzare i progetti
+- [x] Creare un progetto
+- [x] Visualizzare i progetti
 - [ ] Modificare stato progetto
 
 ### Preventivi (Quotes)
-- [ ] Creare un preventivo
-- [ ] Visualizzare i preventivi
+- [x] Creare un preventivo
+- [x] Visualizzare i preventivi
 
 ### Fatture (Invoices)
-- [ ] Visualizzare le fatture
-- [ ] Creare una fattura
+- [x] Visualizzare le fatture
+- [x] Creare una fattura
 
 ### Chilometri (Mileage)
-- [ ] Registrare un viaggio
-- [ ] Visualizzare i viaggi
+- [x] Registrare un viaggio
+- [x] Visualizzare i viaggi
 
 ### Clienti (Clients)
-- [ ] Aggiungere un cliente
-- [ ] Visualizzare i clienti
-- [ ] Rimuovere un cliente
+- [x] Aggiungere un cliente
+- [x] Visualizzare i clienti
+- [x] Rimuovere un cliente
 
 ### Ore Lavoro (Worker Hours)
-- [ ] Registrare ore lavorate
-- [ ] Visualizzare le ore
+- [x] Registrare ore lavorate
+- [x] Visualizzare le ore
 
 ### Calendario
-- [ ] Visualizzare il calendario
-- [ ] Aggiungere un evento
+- [x] Visualizzare il calendario
+- [x] Aggiungere un evento
 
 ---
 
