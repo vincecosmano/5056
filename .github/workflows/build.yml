@@ -3,8 +3,6 @@ name: Build – Web & Android APK
 on:
   push:
     branches: [main, 'copilot/**']
-  pull_request:
-    branches: [main]
   workflow_dispatch:
 
 jobs:

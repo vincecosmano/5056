@@ -4,33 +4,22 @@
 
 ## 🚀 COME OTTENERE L'APP PER TESTARLA – ISTRUZIONI IMMEDIATE
 
-> **Il build automatico è pronto ma richiede che TU lo avvii manualmente** (una volta sola).
-> GitHub blocca i workflow del bot finché il proprietario non li approva o li avvia direttamente.
+> ✅ **Da questo commit il build parte automaticamente ad ogni push del bot** – non serve più nessuna approvazione manuale.
 
-### ✅ OPZIONE 1 – Avvia il build manuale (più semplice, 2 clic)
+### Dove trovi l'app dopo il build (~10 minuti)
 
-1. Vai su: **[https://github.com/vincecosmano/5056/actions/workflows/build.yml](https://github.com/vincecosmano/5056/actions/workflows/build.yml)**
-2. Clicca il pulsante grigio **"Run workflow"** a destra
-3. Nel menu a tendina scegli il branch: **`copilot/update-app-progress`**
-4. Clicca il pulsante verde **"Run workflow"**
-5. Aspetta ~5-10 minuti che finisca (vedrai le 4 fasi diventare verdi ✅)
-6. Risultato:
-   - 📱 **APK Android** → [https://github.com/vincecosmano/5056/releases/latest](https://github.com/vincecosmano/5056/releases/latest) (scarica `app-release.apk`)
-   - 🌐 **Web** → [https://vincecosmano.github.io/5056/](https://vincecosmano.github.io/5056/) (apri nel browser)
+| Piattaforma | Link diretto |
+|-------------|-------------|
+| 📱 **Android APK** | [github.com/vincecosmano/5056/releases/latest](https://github.com/vincecosmano/5056/releases/latest) → scarica `app-release.apk` |
+| 🌐 **App Web** | [vincecosmano.github.io/5056/](https://vincecosmano.github.io/5056/) |
 
-### ✅ OPZIONE 2 – Approva i workflow già in coda
+### Se vuoi avviare un build subito (senza aspettare il prossimo push)
 
-1. Vai su: **[https://github.com/vincecosmano/5056/actions](https://github.com/vincecosmano/5056/actions)**
-2. Vedrai workflow con stato **"Waiting"** o **"Action required"**
-3. Clicca su uno di questi → clicca **"Approve and run"**
-4. Stessa destinazione finale: APK su Releases, Web su GitHub Pages
-
-### ✅ OPZIONE 3 – Cambia le impostazioni per approvazione automatica
-
-1. Vai su: **[https://github.com/vincecosmano/5056/settings/actions](https://github.com/vincecosmano/5056/settings/actions)**
-2. Nella sezione "Fork pull request workflows from outside collaborators"
-3. Seleziona **"Automatically approve and run workflows"**
-4. Salva → i futuri push del bot partiranno da soli
+1. Apri: **[https://github.com/vincecosmano/5056/actions](https://github.com/vincecosmano/5056/actions)**
+2. Clicca sul workflow **"Build – Web & Android APK"** nella colonna di sinistra
+3. Clicca il pulsante grigio **"Run workflow"** a destra della pagina
+4. Lascia il branch di default e clicca **"Run workflow"** (verde)
+5. Aspetta ~10 minuti → trovi APK e web ai link sopra
 
 ---
 
