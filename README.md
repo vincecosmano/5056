@@ -41,6 +41,17 @@
 5. Add the necessary configuration to your Flutter app:
    - Follow the instructions in [Google Sign-In for Flutter](https://pub.dev/packages/google_sign_in)
 
+## CI / CD
+
+The repository includes a GitHub Actions workflow (`.github/workflows/build.yml`) that automatically:
+
+- **Builds the Flutter web app** and uploads the artifact
+- **Deploys to GitHub Pages** on every push to `main`
+- **Builds the Android release APK** and uploads it as an artifact
+- **Creates a GitHub Release** with the APK attached on every push to `main`
+
+Android launcher icons (`mipmap-*`) are provided at all standard densities so the APK resource-linking step succeeds without additional setup.
+
 ## Deployment Instructions
 1. Build the app for release:
    ```bash
