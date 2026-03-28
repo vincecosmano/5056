@@ -11,8 +11,10 @@ import 'providers/invoice_provider.dart';
 import 'providers/mileage_provider.dart';
 import 'providers/worker_hours_provider.dart';
 import 'providers/calendar_provider.dart';
+import 'providers/profile_provider.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
+import 'screens/profile_screen.dart';
 import 'screens/notes_screen.dart';
 import 'screens/mileage_screen.dart';
 import 'screens/calendar_screen.dart';
@@ -53,6 +55,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MileageProvider()),
         ChangeNotifierProvider(create: (_) => WorkerHoursProvider()),
         ChangeNotifierProvider(create: (_) => CalendarProvider()),
+        ChangeNotifierProvider(create: (_) => ProfileProvider()),
       ],
       child: MaterialApp(
         title: 'Oneapptredie',
@@ -71,6 +74,7 @@ class MyApp extends StatelessWidget {
           '/worker_hours': (context) => const WorkerHoursScreen(),
           '/quotes': (context) => const QuotesScreen(),
           '/invoices': (context) => const InvoicesScreen(),
+          '/profile': (context) => const ProfileScreen(),
         },
       ),
     );

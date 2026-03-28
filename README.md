@@ -47,11 +47,11 @@ Per accettare la PR attuale e ottenere l'ultima versione:
 | **Login Google** | Autenticazione via Google OAuth | ✅ Completo |
 | **Home Dashboard** | Griglia con icone e descrizioni per ogni modulo | ✅ Completo |
 | **Persistenza dati** | I dati vengono salvati localmente e sopravvivono al riavvio | ✅ Completo |
+| **Profilo utente** | Schermata profilo con nome, email, telefono, azienda, P.IVA | ✅ Completo |
+| **Export PDF** | Esporta fatture e preventivi in PDF (stampa/salva/condividi) | ✅ Completo |
 
 ### Da completare 🔲
 - [ ] Firebase Web (Google Sign-In su browser)
-- [ ] Schermata profilo utente
-- [ ] Export PDF per fatture e preventivi
 - [ ] Notifiche push (scadenze fatture, eventi calendario)
 
 ### CI/CD ✅

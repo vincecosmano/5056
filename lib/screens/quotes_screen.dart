@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/quote_provider.dart';
+import '../providers/profile_provider.dart';
+import '../services/pdf_export_service.dart';
 
 class QuotesScreen extends StatefulWidget {
   const QuotesScreen({Key? key}) : super(key: key);
@@ -89,6 +91,14 @@ class _QuotesScreenState extends State<QuotesScreen> {
                         children: [
                           Text(
                               '€${(quote['amount'] as double).toStringAsFixed(2)}'),
+                          IconButton(
+                            icon: const Icon(Icons.picture_as_pdf_outlined),
+                            tooltip: 'Esporta PDF',
+                            onPressed: () => PdfExportService.printQuote(
+                              quote,
+                              context.read<ProfileProvider>(),
+                            ),
+                          ),
                           IconButton(
                             icon: const Icon(Icons.delete),
                             onPressed: () => provider
