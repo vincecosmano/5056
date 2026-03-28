@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/invoice_provider.dart';
+import '../providers/profile_provider.dart';
+import '../services/pdf_export_service.dart';
 
 class InvoicesScreen extends StatefulWidget {
   const InvoicesScreen({Key? key}) : super(key: key);
@@ -130,6 +132,14 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                               Text(invoice.status,
                                   style: const TextStyle(fontSize: 12)),
                             ],
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.picture_as_pdf_outlined),
+                            tooltip: 'Esporta PDF',
+                            onPressed: () => PdfExportService.printInvoice(
+                              invoice,
+                              context.read<ProfileProvider>(),
+                            ),
                           ),
                           IconButton(
                             icon: const Icon(Icons.delete),

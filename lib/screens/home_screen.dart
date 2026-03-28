@@ -60,6 +60,13 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Oneapptredie'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.account_circle_outlined),
+            tooltip: 'Profilo',
+            onPressed: () => Navigator.pushNamed(context, '/profile'),
+          ),
+        ],
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(12),
