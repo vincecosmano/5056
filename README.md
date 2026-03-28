@@ -2,6 +2,13 @@
 
 ---
 
+## 🔗 LINK DIRETTI
+
+> ### 🌐 App Web → [https://vincecosmano.github.io/5056/](https://vincecosmano.github.io/5056/)
+> ### 📱 Android APK → [https://github.com/vincecosmano/5056/releases/latest](https://github.com/vincecosmano/5056/releases/latest)
+
+---
+
 ## ▶️ TESTA L'APP ADESSO
 
 | | Link | Note |
